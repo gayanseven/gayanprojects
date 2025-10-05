@@ -532,8 +532,8 @@
             background-size: cover;
         }
 
-        .project-image.multicall {
-            background: url(../images/thumbnail-multicall.png) top center;
+        .project-image.dependentprofile {
+            background: url(../images/thumbnail-dp.png) top center;
             background-size: cover;
         }
 
