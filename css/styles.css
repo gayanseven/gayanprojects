@@ -1242,6 +1242,10 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            .project-grid {
+                 grid-template-columns: 1fr;
+            }
+
             .nav-center,
             .nav-right {
                 display: none;
