@@ -51,8 +51,72 @@
                 <!-- <a href="https://drive.google.com/file/d/1i2DmpCWPaWvjCCyudUB2HoOA8cmARrVa/view?usp=sharing" class="resume-link" target="_blank">Resume</a> -->
                 <a href="#contact" class="nav-contact-btn">Contact</a>
             </div>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+
+<!-- Add this JavaScript at the end of your <body> tag -->
+<script>
+// Hamburger Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const body = document.body;
+    
+    // Toggle menu
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        body.classList.toggle('menu-open');
+    }
+    
+    // Open/Close menu on hamburger click
+    if (hamburger) {
+        hamburger.addEventListener('click', toggleMenu);
+    }
+    
+    // Close menu on overlay click
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', toggleMenu);
+    }
+    
+    // Close menu on link click
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-contact-btn');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    // Prevent scroll on body when menu is open
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+});
+</script>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
