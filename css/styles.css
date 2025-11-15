@@ -171,7 +171,8 @@
         }
 
         .project-1 {
-            background-image: url('../images/1_7TVYgoZTLqER0P6-90bbXA.webp') !important;
+            /* background-image: url('../images/1_7TVYgoZTLqER0P6-90bbXA.webp') !important; */
+            background-image: url('../images/Laptop_Logo_Dark.png') !important;
             background-size: cover !important;
             background-position: center !important;
         }
